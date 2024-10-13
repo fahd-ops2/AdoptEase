@@ -12,7 +12,7 @@ module.exports = function (plop) {
         actions: [
             {
                 type: 'add',
-                path: 'src/app/components/{{pascalCase name}}.js',
+                path: 'src/app/components/{{pascalCase name}}.tsx',
                 templateFile: 'plop-templates/Component.js.hbs',
             },
         ],
@@ -31,7 +31,7 @@ module.exports = function (plop) {
         actions: [
             {
                 type: 'add',
-                path: 'src/services/app/{{camelCase name}}Service.js',
+                path: 'src/services/app/{{camelCase name}}Service.tsx',
                 templateFile: 'plop-templates/Service.js.hbs',
             },
         ],
