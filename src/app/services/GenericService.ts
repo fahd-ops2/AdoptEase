@@ -1,10 +1,14 @@
 import { apiClient } from './apiClient';
 
+// Use environment variable for the API URL
+const BASE_API_URL = process.env.NEXT_PUBLIC_API_URL;
+
 class GenericService<T> {
     private apiUrl: string;
 
-    constructor(apiUrl: string) {
-        this.apiUrl = apiUrl;
+    constructor(endpoint: string) {
+        // Combine base URL with the endpoint
+        this.apiUrl = `${BASE_API_URL}${endpoint}`;
     }
 
     // Get all data
