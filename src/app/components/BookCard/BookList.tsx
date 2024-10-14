@@ -1,8 +1,7 @@
 import React from 'react';
-import { Book } from '../types/Book';
+import { Book } from '../../../types/Book';
 import BookCard from './BookCard';
-import bookService from '../services/bookService';
-import AddBook from './AddBook';
+import bookService from '../../services/bookService';
 
 export default async function BookList() {
     const books : Book[] = await bookService.getAll()
@@ -16,7 +15,6 @@ export default async function BookList() {
                     </li>
                 ))}
             </ul>
-            <AddBook/>
         </>
     );
 }

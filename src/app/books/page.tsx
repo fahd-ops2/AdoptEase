@@ -1,6 +1,6 @@
 import React from 'react'
-import AddBookForm from '../components/BookCard'
-import BookList from '../components/BookList'
+import AddBookForm from '../components/BookCard/BookCard'
+import BookList from '../components/BookCard/BookList'
 
 const page = () => {
   return (
