@@ -6,4 +6,4 @@ const Resources = () => {
   )
 }
 
-export default Ressources
+export default Resources
