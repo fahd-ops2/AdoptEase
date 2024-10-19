@@ -11,17 +11,17 @@ import {
 } from '@mui/material';
 
 import { Pet } from '@/types/Pet';
+import { petsData } from '@/data/pets-data';
+
+interface PetsPageProps {
+    pets: Pet[];
+  }
+  
 
 const PetsPage = async () => {
-    
-    // Fetching pets data on the server side
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/pets`, {
-    // This ensures the fetch is done server-side only
-    cache: 'no-store',
-  });
 
-  const pets: Pet[] = await res.json();
 
+    const pets: Pet[] = petsData;
   return (
     <Container maxWidth="lg">
       <Typography variant="h4" component="h1" gutterBottom>
@@ -63,3 +63,4 @@ const PetsPage = async () => {
 };
 
 export default PetsPage;
+
