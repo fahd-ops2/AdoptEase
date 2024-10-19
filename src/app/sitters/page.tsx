@@ -1,17 +1,16 @@
 import React from 'react'
+import DynamicCard from '../components/DynamicCard';
+import { sitterCardDescriptor } from '@/data/descriptors/sitterCardDescriptor';
+import { sittersData } from '@/data/sitters-data';
 
 const Sitters = () => {
   return (
-    <>
-        <span className="font-bold text-4xl">Sitters</span>
-        <div className="border-dashed border border-zinc-500 w-full h-12 rounded-lg"></div>
-        <div className="border-dashed border border-zinc-500 w-full h-64 rounded-lg"></div>
-        <div className="border-dashed border border-zinc-500 w-full h-64 rounded-lg"></div>
-        <div className="border-dashed border border-zinc-500 w-full h-64 rounded-lg"></div>
-        <div className="border-dashed border border-zinc-500 w-full h-64 rounded-lg"></div>
-        <div className="border-dashed border border-zinc-500 w-full h-64 rounded-lg"></div>
-    </>
-  )
+    <div>
+      {sittersData.map((sitter, index) => (
+        <DynamicCard key={index} descriptor={sitterCardDescriptor} data={sitter} />
+      ))}
+    </div>
+  );
 }
 
 export default Sitters
