@@ -13,10 +13,6 @@ import {
 import { Pet } from '@/types/Pet';
 import { petsData } from '@/data/pets-data';
 
-interface PetsPageProps {
-    pets: Pet[];
-  }
-  
 
 const PetsPage = async () => {
 
