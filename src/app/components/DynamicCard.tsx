@@ -19,6 +19,9 @@ const DynamicCard = <T,>({ descriptor, data }: DynamicCardProps<T>) => {
     if (label === 'Contact Sitter') {
       alert('Contacting sitter...');
     }
+    if (label === 'Adopt') {
+      alert('Adopting pet...');
+    }
   };
 
   return (

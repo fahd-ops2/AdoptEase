@@ -12,6 +12,8 @@ import {
 
 import { Pet } from '@/types/Pet';
 import { petsData } from '@/data/pets-data';
+import DynamicCard from '../components/DynamicCard';
+import { petCardDescriptor } from '@/data/descriptors/petDescriptorCard';
 
 
 const PetsPage = async () => {
@@ -25,32 +27,9 @@ const PetsPage = async () => {
       </Typography>
 
       <Grid2 container spacing={4}>
-        {pets.map((pet) => (
+        {pets.map((pet, index) => (
           <Grid2 size={{xs:12, sm:6, md:4}} key={pet.id}>
-            <Card>
-              <CardMedia
-                component="img"
-                height="200"
-                image={pet.imageUrl}
-                alt={pet.name}
-              />
-              <CardContent>
-                <Typography variant="h6" component="h2">
-                  {pet.name}
-                </Typography>
-                <Typography variant="body2" color="textSecondary">
-                  Breed: {pet.breed}
-                </Typography>
-                <Typography variant="body2" color="textSecondary">
-                  Age: {pet.age}
-                </Typography>
-              </CardContent>
-              <CardActions>
-                <Button size="small" color="primary" >
-                  View More
-                </Button>
-              </CardActions>
-            </Card>
+            <DynamicCard key={index} descriptor={petCardDescriptor} data={pet} />
           </Grid2>
         ))}
       </Grid2>
