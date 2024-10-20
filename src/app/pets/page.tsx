@@ -1,35 +1,13 @@
 import React from 'react';
-import {
-  Typography,
-  Grid2,
-  Container,
-} from '@mui/material';
 
 import { Pet } from '@/types/Pet';
+import PetListing from '../components/PetListing';
 import { petsData } from '@/data/pets-data';
-import DynamicCard from '../components/DynamicCard';
-import { petCardDescriptor } from '@/data/descriptors/petDescriptorCard';
 
+const pets: Pet[] = petsData;
 
-const PetsPage = async () => {
-
-
-    const pets: Pet[] = petsData;
-  return (
-    <Container maxWidth="lg">
-      <Typography variant="h4" component="h1" gutterBottom>
-        Available Pets for Adoption
-      </Typography>
-
-      <Grid2 container spacing={4}>
-        {pets.map((pet, index) => (
-          <Grid2 size={{xs:12, sm:6, md:4}} key={pet.id}>
-            <DynamicCard key={index} descriptor={petCardDescriptor} data={pet} />
-          </Grid2>
-        ))}
-      </Grid2>
-    </Container>
-  );
+const PetsPage = () => {
+    return <PetListing pets={pets} />;
 };
 
 export default PetsPage;
